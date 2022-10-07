@@ -1,8 +1,8 @@
 # Piano
 
 ## Background
-- I like playing the Piano, and often indulge in it.
-- The frequemcy of the different notes was obtained from <a href="https://pages.mtu.edu/~suits/notefreqs.html">here</a>.
+- I like playing the Piano, and often indulge in it
+- The frequemcy of the different notes was obtained from <a href="https://pages.mtu.edu/~suits/notefreqs.html">here</a>
 
 ## Setup
 My setup was on Ubuntu 20.04. To download SFML, run:

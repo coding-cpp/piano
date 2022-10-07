@@ -2,6 +2,7 @@
 #define KEY_H_INCLUDED
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 
 class Key
@@ -10,7 +11,9 @@ class Key
         sf::RenderWindow* window;
         sf::RectangleShape* rect;
 
-        double pitch;
+        sf::Sound* sound;
+
+        int isPlaying;
 
     public:
         Key();
@@ -18,6 +21,7 @@ class Key
 
         void draw();
         void play();
+        void stopPlaying();
 };
 
 #endif // KEY_H_INCLUDED
