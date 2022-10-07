@@ -4,8 +4,9 @@ BlackKey::BlackKey(){
 
 }
 
-BlackKey::BlackKey(sf::RenderWindow* renderWindow, int xPos){
+BlackKey::BlackKey(sf::RenderWindow* renderWindow, int xPos, double pitchInit){
     window = renderWindow;
+    pitch = pitchInit;
 
     rect->setPosition(sf::Vector2f(xPos+10, WINDOW_HEIGHT/6));
     rect->setSize(sf::Vector2f(WINDOW_WIDTH/15-20, WINDOW_HEIGHT/2.5));
@@ -14,8 +15,4 @@ BlackKey::BlackKey(sf::RenderWindow* renderWindow, int xPos){
 
 BlackKey::~BlackKey(){
 
-}
-
-void BlackKey::play(){
-    std::cout << "Black " << rect->getPosition().x-10 << std::endl;
 }

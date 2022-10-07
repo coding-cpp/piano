@@ -5,6 +5,7 @@
 
 #include "white_key.h"
 #include "black_key.h"
+#include "sound_config.h"
 
 class Piano
 {

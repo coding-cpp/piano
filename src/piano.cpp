@@ -10,10 +10,10 @@ Piano::Piano(){
     background->setFillColor(sf::Color::Cyan);
 
     for (int i=0; i<7; i++)
-        whiteKeys[i] = new WhiteKey(window, i);
+        whiteKeys[i] = new WhiteKey(window, i, (frequency[i]/frequency[0]));
     double xPosBlack[5] = {9.0/30.0, 11.0/30.0, 15.0/30.0, 17.0/30.0, 19.0/30.0};
     for (int i=0; i<5; i++)
-        blackKeys[i] = new BlackKey(window, WINDOW_WIDTH*xPosBlack[i]);
+        blackKeys[i] = new BlackKey(window, WINDOW_WIDTH*xPosBlack[i], (frequency[i+7]/frequency[0]));
 }
 
 Piano::~Piano(){

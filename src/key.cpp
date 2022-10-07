@@ -11,3 +11,7 @@ Key::~Key(){
 void Key::draw(){
     window->draw(*rect);
 }
+
+void Key::play(){
+    std::cout << pitch << std::endl;
+}
