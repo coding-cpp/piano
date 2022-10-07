@@ -5,19 +5,15 @@
 #include <iostream>
 
 #include "config.h"
+#include "key.h"
 
-class BlackKey
+class BlackKey : public Key
 {
-    private:
-        sf::RenderWindow* window;
-        sf::RectangleShape* rect;
-
     public:
         BlackKey();
         BlackKey(sf::RenderWindow* renderWindow, int xPos);
         ~BlackKey();
 
-        void draw();
         void play();
 };
 

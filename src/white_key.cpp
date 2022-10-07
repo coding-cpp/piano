@@ -7,7 +7,6 @@ WhiteKey::WhiteKey(){
 WhiteKey::WhiteKey(sf::RenderWindow* renderWindow, int num){
     window = renderWindow;
 
-    rect = new sf::RectangleShape();
     rect->setPosition(sf::Vector2f((num+4)*WINDOW_WIDTH/15, WINDOW_HEIGHT/3));
     rect->setSize(sf::Vector2f(WINDOW_WIDTH/15, WINDOW_HEIGHT/2));
     rect->setFillColor(sf::Color::White);
@@ -16,11 +15,7 @@ WhiteKey::WhiteKey(sf::RenderWindow* renderWindow, int num){
 }
 
 WhiteKey::~WhiteKey(){
-    delete rect;
-}
 
-void WhiteKey::draw(){
-    window->draw(*rect);
 }
 
 void WhiteKey::play(){

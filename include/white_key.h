@@ -5,19 +5,15 @@
 #include <iostream>
 
 #include "config.h"
+#include "key.h"
 
-class WhiteKey
+class WhiteKey : public Key
 {
-    private:
-        sf::RenderWindow* window;
-        sf::RectangleShape* rect;
-
     public:
         WhiteKey();
         WhiteKey(sf::RenderWindow* renderWindow, int num);
         ~WhiteKey();
 
-        void draw();
         void play();
 };
 
