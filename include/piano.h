@@ -3,13 +3,18 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "config.h"
+#include "white_key.h"
+#include "black_key.h"
 
 class Piano
 {
     private:
         sf::RenderWindow* window;
         sf::Event event;
+        sf::RectangleShape* background;
+
+        WhiteKey* whiteKeys[7];
+        BlackKey* blackKeys[5];
 
     public:
         Piano();
@@ -17,6 +22,7 @@ class Piano
 
         void play();
         void display();
+        void handleKeyboard();
 };
 
 #endif // PIANO_H_INCLUDED

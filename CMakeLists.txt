@@ -28,7 +28,7 @@ find_package(SFML 2.5 COMPONENTS system window graphics audio network REQUIRED)
 include_directories(./include)
 
 # Compile executable
-add_executable(Piano ./src/main.cpp ./src/piano.cpp)
+add_executable(Piano ./src/main.cpp ./src/white_key.cpp ./src/black_key.cpp ./src/piano.cpp)
 
 # Link executable to required SFML modules
 target_link_libraries(Piano sfml-graphics sfml-audio)
