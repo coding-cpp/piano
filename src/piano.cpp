@@ -16,10 +16,10 @@ Piano::Piano(){
     }
 
     for (int i=0; i<7; i++)
-        whiteKeys[i] = new WhiteKey(window, i, (frequency[i]/frequency[0]), soundBuffer);
+        whiteKeys[i] = new WhiteKey(window, i, (normalOctave[i]/normalOctave[0]), soundBuffer);
     double xPosBlack[5] = {9.0/30.0, 11.0/30.0, 15.0/30.0, 17.0/30.0, 19.0/30.0};
     for (int i=0; i<5; i++)
-        blackKeys[i] = new BlackKey(window, WINDOW_WIDTH*xPosBlack[i], (frequency[i+7]/frequency[0]), soundBuffer);
+        blackKeys[i] = new BlackKey(window, WINDOW_WIDTH*xPosBlack[i], (normalOctave[i+7]/normalOctave[0]), soundBuffer);
 }
 
 Piano::~Piano(){
@@ -43,6 +43,13 @@ void Piano::play(){
     }
 }
 
+void Piano::stopPlaying(){
+    for (WhiteKey* key: whiteKeys)
+        key->stopPlaying();
+    for (BlackKey* key: blackKeys)
+        key->stopPlaying();
+}
+
 void Piano::display(){
     window->clear();
     window->draw(*background);
@@ -56,63 +63,21 @@ void Piano::display(){
 }
 
 void Piano::handleKeyboard(){
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
-        whiteKeys[0]->play();
-    else
-        whiteKeys[0]->stopPlaying();
+    // Sop playing
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        stopPlaying();
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
-        blackKeys[0]->play();
-    else
-        blackKeys[0]->stopPlaying();
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
-        whiteKeys[1]->play();
-    else
-        whiteKeys[1]->stopPlaying();
-    
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
-        blackKeys[1]->play();
-    else
-        blackKeys[1]->stopPlaying();
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
-        whiteKeys[2]->play();
-    else
-        whiteKeys[2]->stopPlaying();
-    
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
-        whiteKeys[3]->play();
-    else
-        whiteKeys[3]->stopPlaying();
-    
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
-        blackKeys[2]->play();
-    else
-        blackKeys[2]->stopPlaying();
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
-        whiteKeys[4]->play();
-    else
-        whiteKeys[4]->stopPlaying();
-    
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
-        blackKeys[3]->play();
-    else
-        blackKeys[3]->stopPlaying();
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
-        whiteKeys[5]->play();
-    else
-        whiteKeys[5]->stopPlaying();
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Dash))
-        blackKeys[4]->play();
-    else
-        blackKeys[4]->stopPlaying();
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Equal))
-        whiteKeys[6]->play();
-    else
-        whiteKeys[6]->stopPlaying();
+    // Normal Octane Keys
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) whiteKeys[0]->play(); else whiteKeys[0]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) blackKeys[0]->play(); else blackKeys[0]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) whiteKeys[1]->play(); else whiteKeys[1]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) blackKeys[1]->play(); else blackKeys[1]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) whiteKeys[2]->play(); else whiteKeys[2]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) whiteKeys[3]->play(); else whiteKeys[3]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) blackKeys[2]->play(); else blackKeys[2]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) whiteKeys[4]->play(); else whiteKeys[4]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) blackKeys[3]->play(); else blackKeys[3]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) whiteKeys[5]->play(); else whiteKeys[5]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Dash)) blackKeys[4]->play(); else blackKeys[4]->stopDisplaying();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Equal)) whiteKeys[6]->play(); else whiteKeys[6]->stopDisplaying();
 }

@@ -21,8 +21,9 @@ void Key::draw(){
 
 void Key::play(){
     if (isPlaying == 0){
+        sound->stop();
         sound->play();
-        isPlaying = 2;
+        isPlaying = true;
 
         if (rect->getFillColor() == sf::Color::White)
             rect->setFillColor(sf::Color(200, 200, 200));
@@ -31,13 +32,15 @@ void Key::play(){
     }
 }
 
-void Key::stopPlaying(){
+void Key::stopDisplaying(){
     if (rect->getFillColor() == sf::Color(200, 200, 200))
         rect->setFillColor(sf::Color::White);
     else if (rect->getFillColor() == sf::Color(50, 50, 50))
         rect->setFillColor(sf::Color::Black);
 
-    isPlaying -= (isPlaying > 0) ? 1 : 0;
-    if (isPlaying == 0)
-        sound->stop();
+    isPlaying = false;
+}
+
+void Key::stopPlaying(){
+    sound->stop();
 }

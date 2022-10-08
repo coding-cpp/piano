@@ -22,7 +22,8 @@ chmod +x ./run.sh
 ```
 
 ## Instructions
-- Change the sound file path in `./include/config.h` to the required path.
+- Change the sound file path in `./include/config.h` to the required path
+- Hit `SPACE` to stop playing everything
 - Playing the piano is simple, following are the chords:
 
 | Chord | Key   |

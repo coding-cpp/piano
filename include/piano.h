@@ -23,7 +23,10 @@ class Piano
         ~Piano();
 
         void play();
+        void stopPlaying();
+
         void display();
+        
         void handleKeyboard();
 };
 

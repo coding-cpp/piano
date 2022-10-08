@@ -1,3 +1,8 @@
+// For the love of god (even though I'm an atheist)
+// don't modify **anything** apart from the soundFile
+// destination. Remember the first law of coding:
+// "If it works, don't touch it!"
+
 #ifndef CONFIG_H_INCLUDED
 #define CONFIG_H_INCLUDED
 

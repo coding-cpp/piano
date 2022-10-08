@@ -13,7 +13,7 @@ class Key
 
         sf::Sound* sound;
 
-        int isPlaying;
+        bool isPlaying;
 
     public:
         Key();
@@ -21,6 +21,7 @@ class Key
 
         void draw();
         void play();
+        void stopDisplaying();
         void stopPlaying();
 };
 

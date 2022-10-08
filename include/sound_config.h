@@ -1,7 +1,7 @@
 #ifndef SOUND_CONFIG_H_INCLUDED
 #define SOUND_CONFIG_H_INCLUDED
 
-const double frequency[] = {
+const double normalOctave[] = {
     261.63,             // C
     293.665,            // D
     329.628,            // E
