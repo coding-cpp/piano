@@ -24,19 +24,15 @@ chmod +x ./run.sh
 ## Instructions
 - Change the sound file path in `./include/config.h` to the required path
 - Hit `SPACE` to stop playing everything
-- Playing the piano is simple, following are the chords:
+- Playing the piano is simple, refer the images below:
 
-| Chord | Key   |
-| ----- | ---   |
-| C   | `1`   |
-| D   | `3`   |
-| E   | `5`   |
-| F   | `6`   |
-| G   | `8`   |
-| A   | `0`   |
-| B   | `=`   |
-| C<sup>#</sup> or D<sup>b</sup>    | `2`   |
-| D<sup>#</sup> or E<sup>b</sup>    | `4`   |
-| F<sup>#</sup> or G<sup>b</sup>    | `7`   |
-| G<sup>#</sup> or A<sup>b</sup>    | `9`   |
-| A<sup>#</sup> or B<sup>b</sup>    | `-`   |
+| OCTAVE | KEYS |
+| ------ | ---- |
+| Lower  | ![Lower Octave](./assets/Lower_Octave.png) |
+| Middle | ![Middle Octave](./assets/Middle_Octave.png) |
+| Higher | ![Higher Octave](./assets/Higher_Octave.png) |
+
+## Preview
+Well, this is how it looks:
+
+![Piano](./assets/Piano.png)
