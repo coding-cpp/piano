@@ -1,13 +1,13 @@
-#include "key.h"
+#include "key/key.h"
 
 Key::Key(){
-    rect = new sf::RectangleShape();
     sound = new sf::Sound();
-    
-    rect->setOutlineThickness(5);
+
+    rect = new sf::RectangleShape();
     rect->setOutlineColor(sf::Color::Black);
-    
-    isPlaying = 0;
+    rect->setOutlineThickness(2);
+
+    isPlaying = false;
 }
 
 Key::~Key(){
@@ -19,8 +19,8 @@ void Key::draw(){
     window->draw(*rect);
 }
 
-void Key::play(){
-    if (isPlaying == 0){
+void Key::press(){
+    if (!isPlaying){
         sound->stop();
         sound->play();
         isPlaying = true;
@@ -32,7 +32,7 @@ void Key::play(){
     }
 }
 
-void Key::stopDisplaying(){
+void Key::stopPressing(){
     if (rect->getFillColor() == sf::Color(200, 200, 200))
         rect->setFillColor(sf::Color::White);
     else if (rect->getFillColor() == sf::Color(50, 50, 50))
@@ -43,4 +43,5 @@ void Key::stopDisplaying(){
 
 void Key::stopPlaying(){
     sound->stop();
+    stopPressing();
 }

@@ -1,14 +1,13 @@
 #ifndef BLACK_KEY_H_INCLUDED
 #define BLACK_KEY_H_INCLUDED
 
-#include "config.h"
-#include "key.h"
+#include "key/key.h"
 
 class BlackKey : public Key
 {
     public:
         BlackKey();
-        BlackKey(sf::RenderWindow* renderWindow, int xPos, double pitchInit, sf::SoundBuffer* soundBuffer);
+        BlackKey(sf::RenderWindow* renderWindow, sf::SoundBuffer* soundBuffer, int octaveNumber, int position, double pitch);
         ~BlackKey();
 };
 

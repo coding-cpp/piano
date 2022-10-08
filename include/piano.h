@@ -1,9 +1,10 @@
 #ifndef PIANO_H_INCLUDED
 #define PIANO_H_INCLUDED
 
-#include "white_key.h"
-#include "black_key.h"
-#include "sound_config.h"
+#include <iostream>
+
+#include "octave/white.h"
+#include "octave/black.h"
 
 class Piano
 {
@@ -13,10 +14,9 @@ class Piano
         sf::RectangleShape* background;
 
         sf::SoundBuffer* soundBuffer;
-        sf::Sound* sound;
 
-        WhiteKey* whiteKeys[7];
-        BlackKey* blackKeys[5];
+        WhiteOctave* whiteOctaves[3];
+        BlackOctave* blackOctaves[3];
 
     public:
         Piano();
@@ -24,10 +24,10 @@ class Piano
 
         void play();
         void stopPlaying();
+        void handleKeyboard();
 
         void display();
-        
-        void handleKeyboard();
 };
+
 
 #endif // PIANO_H_INCLUDED
