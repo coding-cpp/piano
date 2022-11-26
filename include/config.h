@@ -8,7 +8,7 @@
 // You may change the following variables to your liking
 const sf::Vector2f whiteKeySize = sf::Vector2f(60, 200);
 const sf::Vector2f blackKeySize = sf::Vector2f(40, 180);
-const std::string soundFilePath = "/media/adit/HDD/GITHUB/Piano/res/sound/sound.ogg";
+const std::string soundFilePath = "/home/adit/Desktop/Laptop/Piano/res/sound/sound.ogg";
 const sf::Color bgColor = sf::Color(80, 80, 80);
 
 // The following variables shouldn't be changed as doing so will lead to compromise in quality

@@ -15,14 +15,19 @@ sudo apt upgrade
 sudo apt install libsfml-dev
 ```
 
-Now, in order to run the application, navigate into this directory and run the following commands:
+Now, in order to run the application, navigate into this directory and edit the file `./include/config.h` on line #11 to the sound path:
+
+```cpp
+const std::string soundFilePath = "<insert sound file path here>";
+```
+
+And finally, run the following commands:
 ```sh
 chmod +x ./run.sh
 ./run.sh
 ```
 
 ## Instructions
-- Change the sound file path in `./include/config.h` to the required path
 - Hit `SPACE` to stop playing everything
 - Playing the piano is simple, refer the images below:
 
