@@ -11,7 +11,6 @@ My setup was on Ubuntu 20.04. To download SFML, run:
 
 ```sh
 sudo apt update
-sudo apt upgrade
 sudo apt install libsfml-dev
 ```
 
@@ -26,6 +25,10 @@ And finally, run the following commands:
 chmod +x ./run.sh
 ./run.sh
 ```
+
+If all goes according to plan, your terminal should look something like this:
+
+![Terminal](./assets/Terminal.png)
 
 ## Instructions
 - Hit `SPACE` to stop playing everything
